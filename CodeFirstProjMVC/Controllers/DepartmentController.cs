@@ -8,9 +8,9 @@ using System.Web.Mvc;
 
 namespace CodeFirstProjMVC.Controllers
 {
-    public class CompanyController : Controller
+    public class DepartmentController : Controller
     {
-        ICompanyService companyService = new CompanyService();
+        IDepartmentService companyService = new DepartmentService();
         // GET: Company
         public ActionResult Index()
         {
@@ -63,5 +63,6 @@ namespace CodeFirstProjMVC.Controllers
             var vm = companyService.DeleteDepartment(id);
             return RedirectToAction("Index");
         }
+
     }
 }

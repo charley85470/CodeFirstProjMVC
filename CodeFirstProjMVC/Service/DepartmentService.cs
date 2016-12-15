@@ -1,13 +1,13 @@
-﻿using System;
+﻿using CodeFirstProjMVC.DB.Models;
+using CodeFirstProjMVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using CodeFirstProjMVC.Models;
-using CodeFirstProjMVC.DB.Models;
 
 namespace CodeFirstProjMVC.Service
 {
-    public class CompanyService : ICompanyService
+    public class DepartmentService : IDepartmentService
     {
         public bool AddDepartment(DepartmentVM vm)
         {
@@ -105,5 +105,6 @@ namespace CodeFirstProjMVC.Service
                 return null;
             }
         }
+
     }
 }

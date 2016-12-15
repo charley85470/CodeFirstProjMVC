@@ -6,12 +6,12 @@ using System.Web;
 
 namespace CodeFirstProjMVC.Service
 {
-    public interface ICompanyService
+    public interface IDepartmentService
     {
         bool AddDepartment(DepartmentVM vm);
         bool EditDepartment(DepartmentVM vm);
         bool DeleteDepartment(string id);
         DepartmentVM GetDepartment(string id);
-        IEnumerable<DepartmentVM> GetAllDepartments(); 
+        IEnumerable<DepartmentVM> GetAllDepartments();
     }
 }
