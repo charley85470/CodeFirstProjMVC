@@ -1,4 +1,4 @@
-﻿using CodeFirstProjMVC.Models;
+﻿using CodeFirstProjMVC.DB.Models;
 using CodeFirstProjMVC.Service;
 using System;
 using System.Collections.Generic;
@@ -10,26 +10,26 @@ namespace CodeFirstProjMVC.Controllers
 {
     public class DepartmentController : Controller
     {
-        IDepartmentService companyService = new DepartmentService();
+        IDepartmentService departmentService = new DepartmentService();
         // GET: Company
         public ActionResult Index()
         {
-            var vms = companyService.GetAllDepartments();
+            var vms = departmentService.GetAllDepartments();
             return View(vms);
         }
 
         public ActionResult AddDepartment()
         {
-            DepartmentVM vm = new DepartmentVM { DepartmentId = Guid.NewGuid() };
+            Department vm = new Department { DepartmentId = Guid.NewGuid() };
             return View(vm);
         }
 
         [HttpPost]
-        public ActionResult AddDepartment(DepartmentVM vm)
+        public ActionResult AddDepartment(Department vm)
         {
             if (ModelState.IsValid)
             {
-                var bl = companyService.AddDepartment(vm);
+                var bl = departmentService.AddDepartment(vm);
                 if (bl)
                 {
                     return RedirectToAction("Index");
@@ -40,16 +40,16 @@ namespace CodeFirstProjMVC.Controllers
 
         public ActionResult EditDepartment(string id)
         {
-            var vm = companyService.GetDepartment(id);
+            var vm = departmentService.GetDepartment(id);
             return View(vm);
         }
 
         [HttpPost]
-        public ActionResult EditDepartment(DepartmentVM vm)
+        public ActionResult EditDepartment(Department vm)
         {
             if (ModelState.IsValid)
             {
-                var bl = companyService.EditDepartment(vm);
+                var bl = departmentService.EditDepartment(vm);
                 if (bl)
                 {
                     return RedirectToAction("Index");
@@ -60,7 +60,7 @@ namespace CodeFirstProjMVC.Controllers
 
         public ActionResult DeleteDepartment(string id)
         {
-            var vm = companyService.DeleteDepartment(id);
+            var vm = departmentService.DeleteDepartment(id);
             return RedirectToAction("Index");
         }
 

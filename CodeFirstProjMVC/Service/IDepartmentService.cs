@@ -1,4 +1,5 @@
-﻿using CodeFirstProjMVC.Models;
+﻿using CodeFirstProjMVC.DB.Models;
+using CodeFirstProjMVC.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +9,10 @@ namespace CodeFirstProjMVC.Service
 {
     public interface IDepartmentService
     {
-        bool AddDepartment(DepartmentVM vm);
-        bool EditDepartment(DepartmentVM vm);
+        bool AddDepartment(Department vm);
+        bool EditDepartment(Department vm);
         bool DeleteDepartment(string id);
-        DepartmentVM GetDepartment(string id);
-        IEnumerable<DepartmentVM> GetAllDepartments();
+        Department GetDepartment(string id);
+        IEnumerable<Department> GetAllDepartments();
     }
 }

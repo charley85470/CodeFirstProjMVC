@@ -9,13 +9,13 @@ namespace CodeFirstProjMVC.Service
 {
     public class DepartmentService : IDepartmentService
     {
-        public bool AddDepartment(DepartmentVM vm)
+        public bool AddDepartment(Department vm)
         {
             try
             {
                 using (var db = new Company())
                 {
-                    var department = new Department { DepartmentId = vm.DepartmentId, DepartmentName = vm.DepartmentName };
+                    var department = new DB.Models.Department { DepartmentId = vm.DepartmentId, DepartmentName = vm.DepartmentName };
 
                     db.Departments.Add(department);
                     db.SaveChanges();
@@ -28,7 +28,7 @@ namespace CodeFirstProjMVC.Service
             }
         }
 
-        public bool EditDepartment(DepartmentVM vm)
+        public bool EditDepartment(Department vm)
         {
             try
             {
@@ -65,11 +65,11 @@ namespace CodeFirstProjMVC.Service
             }
         }
 
-        public DepartmentVM GetDepartment(string id)
+        public Department GetDepartment(string id)
         {
             try
             {
-                var result = new DepartmentVM();
+                var result = new Department();
                 using (var db = new Company())
                 {
                     var depId = Guid.Parse(id);
@@ -81,21 +81,21 @@ namespace CodeFirstProjMVC.Service
             }
             catch (Exception e)
             {
-                return default(DepartmentVM);
+                return default(Department);
             }
         }
 
-        public IEnumerable<DepartmentVM> GetAllDepartments()
+        public IEnumerable<Department> GetAllDepartments()
         {
             try
             {
-                List<DepartmentVM> result = new List<DepartmentVM>();
+                List<Department> result = new List<Department>();
                 using (var db = new Company())
                 {
                     var linq = from c in db.Departments select c;
                     foreach (var item in linq)
                     {
-                        result.Add(new DepartmentVM { DepartmentId = item.DepartmentId, DepartmentName = item.DepartmentName });
+                        result.Add(new Department { DepartmentId = item.DepartmentId, DepartmentName = item.DepartmentName });
                     }
                 }
                 return result;
@@ -105,6 +105,5 @@ namespace CodeFirstProjMVC.Service
                 return null;
             }
         }
-
     }
 }

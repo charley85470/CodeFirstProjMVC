@@ -7,6 +7,5 @@ C:\Users\charleychang\documents\visual studio 2015\Projects\CodeFirstProjMVC\Cod
 C:\Users\charleychang\documents\visual studio 2015\Projects\CodeFirstProjMVC\CodeFirstProjMVC.DB\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\charleychang\documents\visual studio 2015\Projects\CodeFirstProjMVC\CodeFirstProjMVC.DB\bin\Debug\zh-Hant\EntityFramework.resources.dll
 C:\Users\charleychang\documents\visual studio 2015\Projects\CodeFirstProjMVC\CodeFirstProjMVC.DB\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
-C:\Users\charleychang\documents\visual studio 2015\Projects\CodeFirstProjMVC\CodeFirstProjMVC.DB\obj\Debug\CodeFirstProjMVC.DB.csprojResolveAssemblyReference.cache
 C:\Users\charleychang\documents\visual studio 2015\Projects\CodeFirstProjMVC\CodeFirstProjMVC.DB\obj\Debug\CodeFirstProjMVC.DB.dll
 C:\Users\charleychang\documents\visual studio 2015\Projects\CodeFirstProjMVC\CodeFirstProjMVC.DB\obj\Debug\CodeFirstProjMVC.DB.pdb
