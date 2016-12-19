@@ -12,27 +12,31 @@ namespace CodeFirstProjMVC.Controllers
         // GET: Report
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public ActionResult ExportReport()
+        {
             #region Local Report 所需參數
             string reportType = "Excel"; //Excel, PDF, Word, and Image
+            string deviceInfo = "";
             string mimeType;
             string encoding;
             string fileNameExtension;
-            string deviceInfo = "";
-            Warning[] warnings;
             string[] streams;
-            byte[] renderedBytes;
+            Warning[] warnings;
             #endregion
 
             #region 宣告Report物件
             LocalReport report = new LocalReport();
-            report.ReportPath = Server.MapPath("~/Reports/MemberReport.rdlc");  // Report檔案位置 
+            report.ReportPath = Server.MapPath("~/Reports/MemberReport.rdlc");  // Report檔案位置
             #endregion
 
             #region 取得報表所需資料(*.xsd檔案)
             #region 前置作業
             var ds = new Reports.Company(); // 宣告報表資料物件
             var adapter = new Reports.CompanyTableAdapters.MembersReportTableAdapter(); // 宣告資料接口(adapter)物件
-            adapter.Fill(ds.MembersReport); // 利用接口(adapter)處理資料流 
+            adapter.Fill(ds.MembersReport); // 利用接口(adapter)處理資料流
             #endregion
 
             #region 填入資料
@@ -41,16 +45,65 @@ namespace CodeFirstProjMVC.Controllers
             #endregion
             #endregion
 
-            #region 重新定義報表格式內容
-            renderedBytes = report.Render(
-                                reportType,
-                                deviceInfo,
-                                out mimeType,
-                                out encoding,
-                                out fileNameExtension,
-                                out streams,
-                                out warnings
-                            ); 
+            #region 重新定義報表內容格式
+            var renderedBytes = report.Render(
+                                    reportType,
+                                    deviceInfo,
+                                    out mimeType,
+                                    out encoding,
+                                    out fileNameExtension,
+                                    out streams,
+                                    out warnings
+                                );
+            #endregion
+
+            //加這一行android下載才會有副檔名
+            if (Response != null)
+                Response.AddHeader("content-disposition", "attachment; filename=download." + fileNameExtension);
+
+            return File(renderedBytes, mimeType);
+        }
+
+        public ActionResult ExportOrder()
+        {
+            #region Local Report 所需參數
+            string reportType = "PDF"; //Excel, PDF, Word, and Image
+            string deviceInfo = "";
+            string mimeType;
+            string encoding;
+            string fileNameExtension;
+            string[] streams;
+            Warning[] warnings;
+            #endregion
+
+            #region 宣告Report物件
+            LocalReport report = new LocalReport();
+            report.ReportPath = Server.MapPath("~/Reports/Order.rdlc");  // Report檔案位置
+            #endregion
+
+            #region 取得報表所需資料(*.xsd檔案)
+            #region 前置作業
+            var ds = new Reports.Company(); // 宣告報表資料物件
+            var adapter = new Reports.CompanyTableAdapters.MembersReportTableAdapter(); // 宣告資料接口(adapter)物件
+            adapter.Fill(ds.MembersReport); // 利用接口(adapter)處理資料流
+            #endregion
+
+            #region 填入資料
+            ReportDataSource rds = new ReportDataSource("Order", ds.MembersReport.ToList()); // 由ds實際取得資料
+            report.DataSources.Add(rds);    // 填入Report物件 
+            #endregion
+            #endregion
+
+            #region 重新定義報表內容格式
+            var renderedBytes = report.Render(
+                                    reportType,
+                                    deviceInfo,
+                                    out mimeType,
+                                    out encoding,
+                                    out fileNameExtension,
+                                    out streams,
+                                    out warnings
+                                );
             #endregion
 
             //加這一行android下載才會有副檔名

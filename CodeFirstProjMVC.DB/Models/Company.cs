@@ -22,5 +22,6 @@
 
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Member> Members { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
     }
 }

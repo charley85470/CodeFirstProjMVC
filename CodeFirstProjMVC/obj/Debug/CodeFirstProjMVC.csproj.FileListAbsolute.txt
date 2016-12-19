@@ -117,3 +117,12 @@ C:\Users\charleychang\Documents\Visual Studio 2015\Projects\CodeFirstProjMVC\Cod
 C:\Users\charleychang\Documents\Visual Studio 2015\Projects\CodeFirstProjMVC\CodeFirstProjMVC\bin\ru\Microsoft.SqlServer.Types.resources.dll
 C:\Users\charleychang\Documents\Visual Studio 2015\Projects\CodeFirstProjMVC\CodeFirstProjMVC\bin\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 C:\Users\charleychang\Documents\Visual Studio 2015\Projects\CodeFirstProjMVC\CodeFirstProjMVC\bin\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\charleychang\Documents\Visual Studio 2015\Projects\CodeFirstProjMVC\CodeFirstProjMVC\bin\LinqToExcel.dll
+C:\Users\charleychang\Documents\Visual Studio 2015\Projects\CodeFirstProjMVC\CodeFirstProjMVC\bin\log4net.dll
+C:\Users\charleychang\Documents\Visual Studio 2015\Projects\CodeFirstProjMVC\CodeFirstProjMVC\bin\Remotion.Data.Linq.dll
+C:\Users\charleychang\Documents\Visual Studio 2015\Projects\CodeFirstProjMVC\CodeFirstProjMVC\bin\Remotion.dll
+C:\Users\charleychang\Documents\Visual Studio 2015\Projects\CodeFirstProjMVC\CodeFirstProjMVC\bin\Remotion.Interfaces.dll
+C:\Users\charleychang\Documents\Visual Studio 2015\Projects\CodeFirstProjMVC\CodeFirstProjMVC\bin\LinqToExcel.xml
+C:\Users\charleychang\Documents\Visual Studio 2015\Projects\CodeFirstProjMVC\CodeFirstProjMVC\bin\log4net.xml
+C:\Users\charleychang\Documents\Visual Studio 2015\Projects\CodeFirstProjMVC\CodeFirstProjMVC\obj\Debug\CodeFirstProjMVC.Migrations.AddOrderMigration.resources
+C:\Users\charleychang\Documents\Visual Studio 2015\Projects\CodeFirstProjMVC\CodeFirstProjMVC\obj\Debug\CodeFirstProjMVC.csproj.GenerateResource.Cache
